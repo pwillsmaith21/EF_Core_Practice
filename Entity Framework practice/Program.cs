@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Entity_Framework_practice;
+namespace Entity_Framework_practice.Models;
 
 internal class Program
 {
@@ -10,7 +10,7 @@ internal class Program
         using var db = new BloggingContext();
 
         // Note: This sample requires the database to be created before running.
-        Console.WriteLine($"Database path: {db.DbPath}.");
+        //Console.WriteLine($"Database path: {db.DbPath}.");
 
         // Create
         Console.WriteLine("Inserting a new blog");
@@ -27,7 +27,7 @@ internal class Program
         Console.WriteLine("Updating the blog and adding a post");
         blog.Url = "https://devblogs.microsoft.com/dotnet";
         blog.Posts.Add(
-            new Post { Title = "Hello World", COntent = "I wrote an app using EF Core!" });
+            new Post { Title = "Hello World", Content = "I wrote an app using EF Core!" });
         db.SaveChanges();
 
         // Delete
